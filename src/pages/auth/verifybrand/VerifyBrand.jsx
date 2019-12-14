@@ -1,21 +1,21 @@
 import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { VerifyForm } from "./container/VerifyForm";
+import { VerifyForm } from "./container";
 import { useFormFields } from "../../../libs/useFormFields";
 import * as authThunk from "../store/thunks";
 
-function VerifyBrand() {
+const VerifyBrand = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     companyReference: {
       firstName: "",
       lastName: "",
+      position: "",
       email: "",
       phoneNumber: ""
     },
     photoIdentityCard: "",
     companyLetter: "",
-    companyRegistrationCertificate: ""
   });
 
   const dispatch = useDispatch();

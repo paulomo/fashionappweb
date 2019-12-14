@@ -10,11 +10,11 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-import { useStyles } from '../style/style';
+import { useStyles } from '../style';
 import Copyright from '../../../../components/copyright/Copyright';
 
 
-export default function SignInForm() {
+const SignInForm = () => {
   const classes = useStyles();
 
   return (
@@ -81,3 +81,5 @@ export default function SignInForm() {
     </Container>
   );
 }
+
+export default SignInForm;

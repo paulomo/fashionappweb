@@ -2,19 +2,16 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import Checkbox from "@material-ui/core/Checkbox";
-// import Link from "@material-ui/core/Link";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import { useStyles } from "../style/style";
+import { useStyles } from "../style";
 import Copyright from "../../../../components/copyright/Copyright";
 
-export const VerifyForm = React.memo(props => {
+const VerifyForm = React.memo(props => {
   const classes = useStyles();
   const {
     fields,
@@ -37,8 +34,8 @@ export const VerifyForm = React.memo(props => {
               <TextField
                 name="firstname"
                 variant="outlined"
+                size="small"
                 required
-                fullWidth
                 id="firstname"
                 label="First Name"
                 autoFocus
@@ -49,6 +46,7 @@ export const VerifyForm = React.memo(props => {
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
+                size="small"
                 required
                 fullWidth
                 id="lastname"
@@ -95,6 +93,8 @@ export const VerifyForm = React.memo(props => {
                 <input type="file" />
                 Upload A Copy of ID Card
               </Button>
+            </Grid>
+            <Grid item xs={12}>
               <Button
                 variant="contained"
                 fullWidth
@@ -103,16 +103,6 @@ export const VerifyForm = React.memo(props => {
                 startIcon={<CloudUploadIcon />}
               >
                 Upload A Copy of Company Letter
-              </Button>
-              <Button
-                variant="contained"
-                mt={2}
-                fullWidth
-                color="default"
-                className={classes.button}
-                startIcon={<CloudUploadIcon />}
-              >
-                Upload A Cpy of Company Certificate
               </Button>
             </Grid>
           </Grid>
@@ -125,7 +115,7 @@ export const VerifyForm = React.memo(props => {
             className={classes.submit}
             disabled={!validateForm()}
           >
-            Verify
+            Verify Your Account
           </Button>
         </form>
       </div>
@@ -135,3 +125,5 @@ export const VerifyForm = React.memo(props => {
     </Container>
   );
 });
+
+export default VerifyForm;

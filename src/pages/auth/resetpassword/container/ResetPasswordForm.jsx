@@ -5,9 +5,9 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import { useStyles } from "../style/style";
+import { useStyles } from "../style";
 
-export default function ResetPasswordForm() {
+const ResetPasswordForm = () => {
   const classes = useStyles();
 
   return (
@@ -68,3 +68,5 @@ export default function ResetPasswordForm() {
     </Container>
   );
 }
+
+export default ResetPasswordForm;

@@ -1,6 +1,8 @@
-import SignUp from '../../pages/auth/signup/SignUp';
-import SignIn from '../../pages/auth/signin/SignIn';
-import ForgotPassword from '../../pages/auth/forgotpassword/ForgotPassword';
+import SignUp from '../../pages/auth/signup';
+import SignIn from '../../pages/auth/signin';
+import ForgotPassword from '../../pages/auth/forgotpassword';
+import VerifyBrand from '../../pages/auth/verifybrand';
+import ResetPassword from '../../pages/auth/resetpassword'
 
 export const routes = [
     {
@@ -21,11 +23,18 @@ export const routes = [
         path: "/forgot-password",
         component: ForgotPassword
     },
+
     {
-        id: "Verify Account",
-        name: "Signup",
+        id: "resetpassword",
+        name: "Reset Password",
+        path: "/reset-password",
+        component: ResetPassword
+    },
+    {
+        id: "verifyaccount",
+        name: "Verify Account",
         path: "/verify-account",
-        component: "VerifyBrand"
+        component: VerifyBrand
     },
     {
         id: "Product",

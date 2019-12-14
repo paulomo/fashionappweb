@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useFormFields } from "../../../libs/useFormFields";
-import ForgotPasswordForm from "./container/ForgotPasswordForm";
+import ForgotPasswordForm from "./container";
 
-function ForgotPassword() {
+const ForgotPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     email: "",
