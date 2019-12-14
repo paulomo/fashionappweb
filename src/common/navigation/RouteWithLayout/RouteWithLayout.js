@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from './node_modules/react';
+import { Route } from './node_modules/react-router-dom';
+import PropTypes from './node_modules/prop-types';
 
 const RouteWithLayout = props => {
   const { layout: Layout, component: Component, ...rest } = props;
