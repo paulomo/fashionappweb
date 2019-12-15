@@ -12,7 +12,8 @@ import theme from "./common/theme";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import store from "./store/store";
 import AppContext from "./AppContext";
-import { RouteConfig } from "./common/navigation/routeConfig";
+// import { RouteConfig } from "./common/navigation/routeConfig";
+import Route from './common/navigation/Route'; 
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -35,7 +36,8 @@ function App() {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Router history={browserHistory}>
-          <RouteConfig />
+          {/* <RouteConfig /> */}
+          <Route />
         </Router>
       </ThemeProvider>
     </Provider>

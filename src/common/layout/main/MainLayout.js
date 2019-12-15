@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
 
-import { Sidebar, Topbar, Footer } from './components';
+import { Sidebar, Topbar, Footer } from './components/';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +19,8 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 240
   },
   content: {
-    height: '100%'
+    height: '100%',
+    padding: '30px',
   }
 }));
 
@@ -50,6 +52,7 @@ const Main = props => {
         [classes.shiftContent]: isDesktop
       })}
     >
+      <CssBaseline />
       <Topbar onSidebarOpen={handleSidebarOpen} />
       <Sidebar
         onClose={handleSidebarClose}

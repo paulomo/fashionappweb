@@ -6,11 +6,10 @@ import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-import ImageIcon from '@material-ui/icons/Image';
+import BarChartIcon from '@material-ui/icons/BarChart';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import { Profile, SidebarNav } from './components';
 
@@ -49,29 +48,24 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Users',
-      href: '/users',
+      title: 'Reports',
+      href: '/reports',
+      icon: <BarChartIcon />
+    },
+    {
+      title: 'Customers',
+      href: '/customers',
       icon: <PeopleIcon />
+    },
+    {
+      title: 'Orders',
+      href: '/orders',
+      icon: <ShoppingCartIcon />
     },
     {
       title: 'Products',
       href: '/products',
       icon: <ShoppingBasketIcon />
-    },
-    {
-      title: 'Authentication',
-      href: '/sign-in',
-      icon: <LockOpenIcon />
-    },
-    {
-      title: 'Typography',
-      href: '/typography',
-      icon: <TextFieldsIcon />
-    },
-    {
-      title: 'Icons',
-      href: '/icons',
-      icon: <ImageIcon />
     },
     {
       title: 'Account',
