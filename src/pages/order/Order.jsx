@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 
 import useStyles from './style';
 
-const Reports = () => {
+export default function Order() {
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -46,5 +46,3 @@ const Reports = () => {
     </div>
   );
 }
-
-export default Reports;

@@ -10,6 +10,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 import { Profile, SidebarNav } from './components';
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     width: 240,
     [theme.breakpoints.up('lg')]: {
       marginTop: 64,
+      paddingTop: 30,
       height: 'calc(100% - 64px)'
     }
   },
@@ -68,6 +70,11 @@ const Sidebar = props => {
       icon: <ShoppingBasketIcon />
     },
     {
+      title: 'Wallet',
+      href: '/wallet',
+      icon: <AccountBalanceWalletIcon />
+    },
+    {
       title: 'Account',
       href: '/account',
       icon: <AccountBoxIcon />
@@ -91,8 +98,8 @@ const Sidebar = props => {
         {...rest}
         className={clsx(classes.root, className)}
       >
-        <Profile />
-        <Divider className={classes.divider} />
+        {/* <Profile /> */}
+        {/* <Divider className={classes.divider} /> */}
         <SidebarNav
           className={classes.nav}
           pages={pages}

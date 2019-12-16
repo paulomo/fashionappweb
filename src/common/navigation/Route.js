@@ -17,7 +17,7 @@ import {
   Account as AccountPage,
   Customers as CustomersPage,
   Product as ProductPage,
-  Sale as SalePage,
+  Order as OrderPage,
   Wallet as WalletPage,
   Reports as ReportsPage,
   Setting as SettingPage,
@@ -83,7 +83,7 @@ const Routes = () => {
         path="/products"
       />
       <RouteWithLayout
-        component={SalePage}
+        component={OrderPage}
         exact
         layout={MainLayout}
         path="/orders"
@@ -92,7 +92,7 @@ const Routes = () => {
         component={WalletPage}
         exact
         layout={MainLayout}
-        path="wallet"
+        path="/wallet"
       />
       <RouteWithLayout
         component={ReportsPage}
