@@ -11,11 +11,15 @@ import Container from "@material-ui/core/Container";
 import { useStyles } from "../style";
 import Copyright from "../../../../components/copyright/Copyright";
 
+import { FilePond } from "react-filepond";
+import "filepond/dist/filepond.min.css";
+
 const VerifyForm = React.memo(props => {
   const classes = useStyles();
   const {
     fields,
     handleFieldChange,
+    fileSelectHandler,
     handleSubmit,
     isLoading,
     validateForm
@@ -25,7 +29,7 @@ const VerifyForm = React.memo(props => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" mb={5}>
           PLEASE VERIFY YOU ARE APPROVED BY ZARA
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -83,27 +87,7 @@ const VerifyForm = React.memo(props => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button
-                variant="contained"
-                fullWidth
-                color="default"
-                className={classes.button}
-                startIcon={<CloudUploadIcon />}
-              >
-                <input type="file" />
-                Upload A Copy of ID Card
-              </Button>
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                fullWidth
-                color="default"
-                className={classes.button}
-                startIcon={<CloudUploadIcon />}
-              >
-                Upload A Copy of Company Letter
-              </Button>
+              <FilePond allowMultiple={true} /> {/* server="http://192.168.33.10" */}
             </Grid>
           </Grid>
           <Button

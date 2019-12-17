@@ -1,50 +1,108 @@
 import React from 'react';
-import clsx from 'clsx';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
+import { makeStyles } from '@material-ui/styles';
+import { Grid } from '@material-ui/core';
 
-import useStyles from './style';
+import {
+  Stock,
+  Customers,
+  Sales,
+  RecentSales,
+  Favourites,
+  RecentProducts,
+  RecentOrders,
+  CustomersByLocation
+} from './components';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(4)
+  }
+}));
 
 const Dashboard = () => {
   const classes = useStyles();
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <main className={classes.content}>
-        {/* <div className={classes.appBarSpacer} /> */}
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Chart /> */}
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Deposits /> */}
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {/* <Orders /> */}
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-      </main>
+      <Grid
+        container
+        spacing={4}
+      >
+        <Grid
+          item
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
+        >
+          <Stock />
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
+        >
+          <Customers />
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
+        >
+          <Favourites />
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}
+        >
+          <Sales />
+        </Grid>
+        <Grid
+          item
+          lg={8}
+          md={12}
+          xl={9}
+          xs={12}
+        >
+          <RecentSales />
+        </Grid>
+        <Grid
+          item
+          lg={4}
+          md={6}
+          xl={3}
+          xs={12}
+        >
+          <CustomersByLocation />
+        </Grid>
+        <Grid
+          item
+          lg={4}
+          md={6}
+          xl={3}
+          xs={12}
+        >
+          <RecentProducts />
+        </Grid>
+        <Grid
+          item
+          lg={8}
+          md={12}
+          xl={9}
+          xs={12}
+        >
+          <RecentOrders />
+        </Grid>
+      </Grid>
     </div>
   );
-}
+};
 
 export default Dashboard;

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { VerifyForm } from "./container";
 import { useFormFields } from "../../../libs/useFormFields";
 import * as authThunk from "../store/thunks";
+import { MenuBar } from '../../../common/layout/main/components'
 
 const VerifyBrand = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,8 +15,8 @@ const VerifyBrand = () => {
       email: "",
       phoneNumber: ""
     },
-    photoIdentityCard: "",
-    companyLetter: "",
+    photoIdentityCard: null,
+    companyLetter: null,
   });
 
   const dispatch = useDispatch();
@@ -32,6 +33,12 @@ const VerifyBrand = () => {
     );
   }
 
+  const fileSelectHandler = (event) => {
+    console.log(event.target.files[0]);
+    fields.photoIdentityCard = event.target.files[0];
+    fields.companyLetter = event.target.files[1];
+  }
+
   const makeCall = useCallback(() => dispatch(authThunk.signupThunk(fields)), [
     dispatch,
     fields
@@ -39,19 +46,21 @@ const VerifyBrand = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     console.log(fields);
-    makeCall();
+    // makeCall();
   }
 
   return (
     <div>
+      <MenuBar />
       <VerifyForm
         fields={fields}
         handleSubmit={handleSubmit}
         isLoading={isLoading}
         validateForm={validateForm}
         handleFieldChange={handleFieldChange}
+        fileSelectHandler={fileSelectHandler}
       />
     </div>
   );
