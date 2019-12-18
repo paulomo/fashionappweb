@@ -16,8 +16,8 @@ import {
   Dashboard as DashboardPage,
   Account as AccountPage,
   Customers as CustomersPage,
-  Product as ProductPage,
-  Order as OrderPage,
+  ProductList as ProductListPage,
+  OrderList as OrderListPage,
   Wallet as WalletPage,
   Reports as ReportsPage,
   Setting as SettingPage,
@@ -77,13 +77,13 @@ const Routes = () => {
         path="/customers"
       />
       <RouteWithLayout
-        component={ProductPage}
+        component={ProductListPage}
         exact
         layout={MainLayout}
         path="/products"
       />
       <RouteWithLayout
-        component={OrderPage}
+        component={OrderListPage}
         exact
         layout={MainLayout}
         path="/orders"
