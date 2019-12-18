@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Button } from "@material-ui/core";
@@ -24,7 +25,7 @@ const ProductsToolbar = props => {
       <div className={classes.row}>
         <SearchInput
           className={classes.searchInput}
-          placeholder="Search user"
+          placeholder="Search Product"
         />
       </div>
     </div>

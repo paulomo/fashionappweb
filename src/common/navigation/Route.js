@@ -21,7 +21,8 @@ import {
   Wallet as WalletPage,
   Reports as ReportsPage,
   Setting as SettingPage,
-  NotFound as NotFoundPage
+  NotFound as NotFoundPage,
+  NewProduct as NewProductPage
 } from "../../pages";
 
 const Routes = () => {
@@ -81,6 +82,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/products"
+      />
+      <RouteWithLayout
+        component={NewProductPage}
+        exact
+        layout={MainLayout}
+        path="/new-product"
       />
       <RouteWithLayout
         component={OrderListPage}

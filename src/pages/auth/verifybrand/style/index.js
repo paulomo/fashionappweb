@@ -1,1 +1,1 @@
-export { default as useStyles } from './Style';
+export { default as useStyles } from './style';
