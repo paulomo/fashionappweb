@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { SignUpForm } from "./container/SignUpForm";
+import { SignUpForm } from "./container";
 import { useFormFields } from "../../../libs/useFormFields";
 import * as authThunk from "../store/thunks";
 
-function SignUp() {
+const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     firstname: "",

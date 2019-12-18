@@ -10,10 +10,10 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import { useStyles } from "../style/style";
+import { useStyles } from "../style";
 import Copyright from "../../../../components/copyright/Copyright";
 
-export const SignUpForm = React.memo(props => {
+const SignUpForm = React.memo(props => {
   const classes = useStyles();
   const {
     fields,
@@ -118,3 +118,5 @@ export const SignUpForm = React.memo(props => {
     </Container>
   );
 });
+
+export default SignUpForm;

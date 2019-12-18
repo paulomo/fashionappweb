@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import SignInForm from "./container/SignInForm";
+import { SignInForm } from "./container";
 import { useFormFields } from "../../../libs/useFormFields";
 
-function SignIn() {
+const SignIn = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     email: "",
