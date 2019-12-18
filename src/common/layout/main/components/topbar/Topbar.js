@@ -8,7 +8,6 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/NotificationsOutlined";
 import Avatar from "@material-ui/core/Avatar";
-import InputIcon from "@material-ui/icons/Input";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -51,7 +50,7 @@ const Topbar = props => {
           <IconButton className={classes.signOutButton} color="inherit">
             <Avatar alt="Remy Sharp" src="" />
           </IconButton>
-          <MenuItem onClick={handleProfileMenuOpen}>
+          {/* <MenuItem onClick={handleProfileMenuOpen}>
             <IconButton
               aria-label="account of current user"
               aria-controls="primary-search-account-menu"
@@ -61,7 +60,7 @@ const Topbar = props => {
               <Avatar alt="Remy Sharp" src="" />
             </IconButton>
             <p>Profile</p>
-          </MenuItem>
+          </MenuItem> */}
         </Hidden>
         <Hidden lgUp>
           <IconButton color="inherit" onClick={onSidebarOpen}>
