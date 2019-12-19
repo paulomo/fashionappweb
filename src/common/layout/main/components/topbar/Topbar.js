@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: "2"
   },
+  barColor: {
+    color: theme.palette.background.default,
+  },
   flexGrow: {
     flexGrow: 1
   },
@@ -34,7 +37,7 @@ const Topbar = props => {
   };
 
   return (
-    <AppBar {...rest} className={clsx(classes.root, className)}>
+    <AppBar {...rest} className={clsx(classes.root, classes.barColor, className)}>
       <Toolbar>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
