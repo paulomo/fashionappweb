@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { OrdersToolbar, OrdersTable } from "./components";
 import mockData from "./data";
-import useStyles from './Styles';
+import useStyles from './styles';
 
 const OrderList = () => {
   const classes = useStyles();

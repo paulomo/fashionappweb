@@ -72,6 +72,14 @@ const OrdersTable = props => {
     setRowsPerPage(event.target.value);
   };
 
+  function handleClick(item) {
+    // props.history.push(
+    //   "/apps/e-commerce/orders/" + item.id + "/" + item.handle
+    // );
+    console.log(item.id);
+    console.log(item);
+  }
+
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent className={classes.content}>
@@ -105,6 +113,7 @@ const OrdersTable = props => {
                     hover
                     key={user.id}
                     selected={selectedUsers.indexOf(user.id) !== -1}
+                    onClick={event => handleClick(user)}
                   >
                     <TableCell padding="checkbox">
                       <Checkbox
@@ -146,7 +155,7 @@ const OrdersTable = props => {
           onChangeRowsPerPage={handleRowsPerPageChange}
           page={page}
           rowsPerPage={rowsPerPage}
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[5, 10, 15]}
         />
       </CardActions>
     </Card>

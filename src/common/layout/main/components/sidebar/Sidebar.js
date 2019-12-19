@@ -50,8 +50,8 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Reports',
-      href: '/reports',
+      title: 'Analytics',
+      href: '/analytics',
       icon: <BarChartIcon />
     },
     // {
