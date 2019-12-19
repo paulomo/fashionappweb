@@ -54,11 +54,11 @@ const Sidebar = props => {
       href: '/reports',
       icon: <BarChartIcon />
     },
-    {
-      title: 'Customers',
-      href: '/customers',
-      icon: <PeopleIcon />
-    },
+    // {
+    //   title: 'Customers',
+    //   href: '/customers',
+    //   icon: <PeopleIcon />
+    // },
     {
       title: 'Orders',
       href: '/orders',

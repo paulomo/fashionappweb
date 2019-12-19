@@ -91,11 +91,11 @@ const OrdersTable = props => {
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Email</TableCell>
-                  <TableCell>Location</TableCell>
-                  <TableCell>Phone</TableCell>
-                  <TableCell>Registration date</TableCell>
+                  <TableCell>Product Name</TableCell>
+                  <TableCell>Order Date</TableCell>
+                  <TableCell>Quantity</TableCell>
+                  <TableCell>Size</TableCell>
+                  <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
