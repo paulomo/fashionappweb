@@ -40,11 +40,11 @@ const RecentOrders = props => {
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
       <CardHeader
-        action={
-          <Button color="primary" size="small" variant="outlined">
-            New entry
-          </Button>
-        }
+        // action={
+        //   <Button color="primary" size="small" variant="outlined">
+        //     New entry
+        //   </Button>
+        // }
         title="Latest Orders"
       />
       <Divider />

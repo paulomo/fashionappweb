@@ -71,12 +71,12 @@ const Routes = () => {
         layout={MainLayout}
         path="/account"
       />
-      <RouteWithLayout
+      {/* <RouteWithLayout
         component={CustomersPage}
         exact
         layout={MainLayout}
         path="/customers"
-      />
+      /> */}
       <RouteWithLayout
         component={ProductListPage}
         exact

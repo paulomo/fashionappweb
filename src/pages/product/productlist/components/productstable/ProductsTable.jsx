@@ -27,7 +27,7 @@ const ProductsTable = props => {
   const classes = useStyles();
 
   const [selectedUsers, setSelectedUsers] = useState([]);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(7);
   const [page, setPage] = useState(0);
 
   const handleSelectAll = event => {
@@ -92,10 +92,10 @@ const ProductsTable = props => {
                     />
                   </TableCell>
                   <TableCell>Name</TableCell>
-                  <TableCell>Email</TableCell>
-                  <TableCell>Location</TableCell>
-                  <TableCell>Phone</TableCell>
-                  <TableCell>Registration date</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Size</TableCell>
+                  <TableCell>Stock</TableCell>
+                  <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

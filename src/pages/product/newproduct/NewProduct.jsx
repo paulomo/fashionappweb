@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-// import { ProductsToolbar, ProductsTable } from "./components";
-// import mockData from "./data";
+import { TabPage } from "./components";
 import useStyles from './styles';
 
 const NewProduct = () => {
   const classes = useStyles();
 
-//   const [users] = useState(mockData);
+  const [productData, setProduct] = useState({
+    basicInfo:{},
+    inventory: {},
+    measurement: {},
+    pricing: {},
+    productImage: {},
+    shipping: {}
+  });
 
   return (
     <div className={classes.root}>
-      {/* <ProductsToolbar /> */}
       <div className={classes.content}>
-        {/* <ProductsTable users={users} /> */}
+        <TabPage productData={productData}/>
       </div>
     </div>
   );
