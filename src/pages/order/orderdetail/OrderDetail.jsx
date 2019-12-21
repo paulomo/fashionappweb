@@ -10,9 +10,9 @@ const OrderDetail = () => {
 
   return (
     <div className={classes.root}>
-      <OrderDetailPage />
+      {/* <OrderDetailPage /> */}
       <div className={classes.content}>
-        {/* <OrdersTable users={users} /> */}
+      <OrderDetailPage />
       </div>
     </div>
   );

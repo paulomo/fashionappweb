@@ -1,15 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import {
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-  Avatar,
-  LinearProgress
-} from '@material-ui/core';
-import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
+import PropTypes from 'prop-types';  
+import { Card, CardContent, Grid, Typography, Avatar, LinearProgress } from '@material-ui/core';
+import MoneyIcon from '@material-ui/icons/Money';
 
 import useStyles from './styles';
 
@@ -35,19 +28,19 @@ const Favourites = props => {
               gutterBottom
               variant="body2"
             >
-              TASKS PROGRESS
+              STOCK
             </Typography>
-            <Typography variant="h3">75.5%</Typography>
+            <Typography variant="h3">2,000</Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <InsertChartIcon className={classes.icon} />
+              <MoneyIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>
         <LinearProgress
           className={classes.progress}
-          value={75.5}
+          value={75}
           variant="determinate"
         />
       </CardContent>

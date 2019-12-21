@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 700
   },
   avatar: {
-    backgroundColor: theme.palette.error.main,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
     height: 56,
     width: 56
   },
@@ -20,8 +21,17 @@ const useStyles = makeStyles(theme => ({
     height: 32,
     width: 32
   },
-  progress: {
-    marginTop: theme.spacing(3)
+  differenceValue: {
+    color: theme.palette.error.dark,
+    marginRight: theme.spacing(1)
+  },
+  differenceIcon: {
+    color: theme.palette.error.dark
+  },
+  difference: {
+    marginTop: theme.spacing(2),
+    display: "flex",
+    alignItems: "center"
   },
 }));
 

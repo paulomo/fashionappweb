@@ -6,6 +6,9 @@ import { useTheme } from "@material-ui/core/styles";
 import { OrderDetailTabPanel } from '../index';
 import useStyles from './styles';
 
+// Pages
+import { DeliveryDetail } from './deliverydetail';
+
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
@@ -36,19 +39,19 @@ export default function FullWidthTabs() {
           textColor="primary"
           centered
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Order Details" {...a11yProps(0)} />
+          <Tab label="Product Details" {...a11yProps(1)} />
+          <Tab label="Delivery Details" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
         <OrderDetailTabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+        Order Details
         </OrderDetailTabPanel>
         <OrderDetailTabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+          <DeliveryDetail />
         </OrderDetailTabPanel>
         <OrderDetailTabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+        Delivery Details
         </OrderDetailTabPanel>
     </div>
   );

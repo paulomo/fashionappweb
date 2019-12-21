@@ -1,11 +1,11 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import React from "react";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import PeopleIcon from "@material-ui/icons/PeopleOutlined";
 
-import useStyles from './style';
+import useStyles from "./style";
 
 const Customers = props => {
   const { className, ...rest } = props;
@@ -13,15 +13,9 @@ const Customers = props => {
   const classes = useStyles();
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent>
-        <Grid
-          container
-          justify="space-between"
-        >
+        <Grid container justify="space-between">
           <Grid item>
             <Typography
               className={classes.title}
@@ -29,7 +23,7 @@ const Customers = props => {
               gutterBottom
               variant="body2"
             >
-              TOTAL USERS
+              TOTAL CUSTOMERS
             </Typography>
             <Typography variant="h3">1,600</Typography>
           </Grid>
@@ -41,16 +35,10 @@ const Customers = props => {
         </Grid>
         <div className={classes.difference}>
           <ArrowUpwardIcon className={classes.differenceIcon} />
-          <Typography
-            className={classes.differenceValue}
-            variant="body2"
-          >
+          <Typography className={classes.differenceValue} variant="body2">
             16%
           </Typography>
-          <Typography
-            className={classes.caption}
-            variant="caption"
-          >
+          <Typography className={classes.caption} variant="caption">
             Since last month
           </Typography>
         </div>
