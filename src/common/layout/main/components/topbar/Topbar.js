@@ -11,10 +11,11 @@ import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    boxShadow: "2"
+    boxShadow: "none",
+    color: theme.palette.background.paper
   },
   barColor: {
-    color: theme.palette.background.default,
+    color: theme.palette.background.paper,
   },
   flexGrow: {
     flexGrow: 1

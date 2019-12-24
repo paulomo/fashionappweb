@@ -22,21 +22,22 @@ import { getInitials } from "../../../../../common/helpers";
 import useStyles from "./Styles";
 
 const OrdersTable = props => {
-  const { className, users, ...rest } = props;
+  const { className, orderInfo, ...rest } = props;
 
   const classes = useStyles();
 
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(0);
+  const [currency] = useState('$');
 
   const handleSelectAll = event => {
-    const { users } = props;
+    const { orderInfo } = props;
 
     let selectedUsers;
 
     if (event.target.checked) {
-      selectedUsers = users.map(user => user.id);
+      selectedUsers = orderInfo.map(order => order.id);
     } else {
       selectedUsers = [];
     }
@@ -74,10 +75,11 @@ const OrdersTable = props => {
 
   function handleClick(item) {
     // props.history.push(
-    //   "/apps/e-commerce/orders/" + item.id + "/" + item.handle
+    //   "/orders/order/" + item.id + "/" + item.handle
     // );
     console.log(item.id);
     console.log(item);
+    console.log(orderInfo);
   }
 
   return (
@@ -88,58 +90,67 @@ const OrdersTable = props => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell padding="checkbox">
+                  {/* <TableCell padding="checkbox">
                     <Checkbox
-                      checked={selectedUsers.length === users.length}
+                      checked={selectedUsers.length === orderInfo.length}
                       color="primary"
                       indeterminate={
                         selectedUsers.length > 0 &&
-                        selectedUsers.length < users.length
+                        selectedUsers.length < orderInfo.length
                       }
                       onChange={handleSelectAll}
                     />
-                  </TableCell>
+                  </TableCell> */}
+                  <TableCell>Image</TableCell>
                   <TableCell>Product Name</TableCell>
                   <TableCell>Order Date</TableCell>
                   <TableCell>Quantity</TableCell>
                   <TableCell>Size</TableCell>
+                  <TableCell>Price</TableCell>
                   <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {users.slice(0, rowsPerPage).map(user => (
+                {orderInfo.slice(0, rowsPerPage).map(order => (
                   <TableRow
                     className={classes.tableRow}
                     hover
-                    key={user.id}
-                    selected={selectedUsers.indexOf(user.id) !== -1}
-                    onClick={event => handleClick(user)}
+                    key={order.id}
+                    selected={selectedUsers.indexOf(order.id) !== -1}
+                    onClick={event => handleClick(order)}
                   >
-                    <TableCell padding="checkbox">
+                    {/* <TableCell padding="checkbox">
                       <Checkbox
-                        checked={selectedUsers.indexOf(user.id) !== -1}
+                        checked={selectedUsers.indexOf(order.id) !== -1}
                         color="primary"
-                        onChange={event => handleSelectOne(event, user.id)}
+                        onChange={event => handleSelectOne(event, order.id)}
                         value="true"
                       />
-                    </TableCell>
+                    </TableCell> */}
                     <TableCell>
                       <div className={classes.nameContainer}>
-                        <Avatar className={classes.avatar} src={user.avatarUrl}>
-                          {getInitials(user.name)}
+                        <Avatar
+                          className={classes.avatar}
+                          src={order.products.image}
+                        >
+                          D
                         </Avatar>
-                        <Typography variant="body1">{user.name}</Typography>
                       </div>
                     </TableCell>
-                    <TableCell>{user.email}</TableCell>
+                    {order.products.map(product => (
+                      <TableCell>{product.name}</TableCell>
+                    ))}
                     <TableCell>
-                      {user.address.city}, {user.address.state},{" "}
-                      {user.address.country}
+                      {moment(order.date).format("DD/MM/YYYY")}
                     </TableCell>
-                    <TableCell>{user.phone}</TableCell>
-                    <TableCell>
-                      {moment(user.createdAt).format("DD/MM/YYYY")}
-                    </TableCell>
+                    {order.products.map(product => (
+                      <React.Fragment>
+                        <TableCell>{product.quantity}</TableCell>
+                        <TableCell>{product.size}</TableCell>
+                        <TableCell>{currency}{product.price}</TableCell>
+                      </React.Fragment>
+                    ))}
+                    <TableCell>{order.status}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -150,7 +161,7 @@ const OrdersTable = props => {
       <CardActions className={classes.actions}>
         <TablePagination
           component="div"
-          count={users.length}
+          count={orderInfo.length}
           onChangePage={handlePageChange}
           onChangeRowsPerPage={handleRowsPerPageChange}
           page={page}
