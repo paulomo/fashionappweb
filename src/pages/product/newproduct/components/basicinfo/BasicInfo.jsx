@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
+import DateFnsUtils from '@date-io/date-fns';
+// import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 import useStyles from "./styles";
 
 const categories = [
@@ -25,7 +27,7 @@ const categories = [
   }
 ];
 
-const genderType = [
+const productType = [
   {
     value: "female",
     label: "Female"
@@ -40,9 +42,25 @@ const genderType = [
   }
 ];
 
+const demography = [
+  {
+    value: "0-12",
+    label: "0 - 12months"
+  },
+  {
+    value: "12-24",
+    label: "12 - 24months"
+  },
+  {
+    value: "2-4",
+    label: "2 - 4years"
+  }
+];
+
 const BasicInfo = props => {
   const classes = useStyles();
   const { basicInfo, category, handleCategorySelection } = props;
+  const [selectedDate, handleDateChange] = useState(new Date());
 
   return (
     <React.Fragment>
@@ -52,7 +70,7 @@ const BasicInfo = props => {
           <Grid container>
             <TextField
               required
-              id="Product-Name"
+              id="product-name"
               label="Product Name"
               variant="outlined"
               fullWidth
@@ -61,7 +79,7 @@ const BasicInfo = props => {
           <Grid container>
             <TextField
               required
-              id="Description"
+              id="description"
               label="Description"
               type="text"
               multiline
@@ -69,9 +87,9 @@ const BasicInfo = props => {
               fullWidth
             />
           </Grid>
-          <Grid container>
+          <Grid container className={classes.mutiple}>
             <TextField
-              id="Product-Catergory"
+              id="product-catergory"
               select
               label="Product Catergory"
               value={category}
@@ -86,29 +104,76 @@ const BasicInfo = props => {
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-          <Grid container>
             <TextField
-              id="gender"
+              id="product-type"
               select
-              label="Gender Type"
+              label="Product Type"
               variant="outlined"
+              fullWidth
+              required
             >
-              {genderType.map(option => (
+              {productType.map(option => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
               ))}
             </TextField>
+          </Grid>
+          <Grid container>
             <TextField
-              id="outlined-number"
-              label="Number"
-              type="number"
-              InputLabelProps={{
-                shrink: true
-              }}
+              required
+              id="material-type"
+              label="Material Type"
               variant="outlined"
+              fullWidth
             />
+          </Grid>
+          <Grid container>
+            <TextField
+              required
+              id="care"
+              label="Care Description"
+              type="text"
+              multiline
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          <Grid container>
+            <TextField
+              id="color"
+              label="Color(s)"
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          <Grid container className={classes.mutiple}>
+            <TextField
+              id="demography"
+              select
+              label="Demography"
+              variant="outlined"
+              fullWidth
+              required
+            >
+              {demography.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField id="year" label="Year" type="date" format="MM/dd/yyyy" variant="outlined" />
+            {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <DatePicker
+                disableFuture
+                openTo="year"
+                format="dd/MM/yyyy"
+                label="Date of birth"
+                views={["year", "month", "date"]}
+                value={selectedDate}
+                onChange={handleDateChange}
+              />
+            </MuiPickersUtilsProvider> */}
           </Grid>
         </div>
       </Container>

@@ -14,6 +14,7 @@ import Measurement from "./measurement";
 import Pricing from "./pricing";
 import ProductImage from "./productimage";
 import Shipping from "./shipping";
+import { useState } from "react";
 
 function a11yProps(index) {
   return {
@@ -22,10 +23,11 @@ function a11yProps(index) {
   };
 }
 
-export default function TabPage({productData}) {
+export default function TabPage({ productData }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [category, setCategory] = React.useState("");
+  const [measurementOption, setMeasurementOption] = useState({ option: null });
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -34,6 +36,10 @@ export default function TabPage({productData}) {
   const handleCategorySelection = event => {
     setCategory(event.target.value);
   };
+
+  const handleMeasurementOption = (measurementOption) => {
+    setMeasurementOption(measurementOption);
+  }
 
   return (
     <React.Fragment>
@@ -71,16 +77,20 @@ export default function TabPage({productData}) {
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-          <BasicInfo 
-          basicInfo={productData.basicinfo}
-          category={category}
-          handleCategorySelection={handleCategorySelection}/>
+          <BasicInfo
+            basicInfo={productData.basicinfo}
+            category={category}
+            handleCategorySelection={handleCategorySelection}
+          />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Inventory />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <Measurement />
+          <Measurement
+            handleMeasurementOption={handleMeasurementOption}
+            measurementOption={measurementOption}
+          />
         </TabPanel>
         <TabPanel value={value} index={3}>
           <Pricing />
