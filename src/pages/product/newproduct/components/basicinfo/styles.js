@@ -4,8 +4,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(2),
-      width: "50%",
-      alignItems: "auto"
+      // width: flex,
+      alignContent: "center"
     }
   }
 }));

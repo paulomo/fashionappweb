@@ -25,9 +25,14 @@ function a11yProps(index) {
 export default function TabPage({productData}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [category, setCategory] = React.useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleCategorySelection = event => {
+    setCategory(event.target.value);
   };
 
   return (
@@ -66,7 +71,10 @@ export default function TabPage({productData}) {
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-          <BasicInfo />
+          <BasicInfo 
+          basicInfo={productData.basicinfo}
+          category={category}
+          handleCategorySelection={handleCategorySelection}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Inventory />

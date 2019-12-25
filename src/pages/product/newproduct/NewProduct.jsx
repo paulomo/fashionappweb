@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { TabPage } from "./components";
-import useStyles from './styles';
+import useStyles from "./styles";
 
 const NewProduct = () => {
   const classes = useStyles();
 
   const [productData, setProduct] = useState({
-    basicInfo:{},
+    basicInfo: {},
     inventory: {},
     measurement: {},
     pricing: {},
@@ -17,7 +17,9 @@ const NewProduct = () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <TabPage productData={productData}/>
+        <TabPage
+          productData={productData}
+        />
       </div>
     </div>
   );
