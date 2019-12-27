@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles, useTheme } from '@material-ui/styles';
-import { useMediaQuery } from '@material-ui/core';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { makeStyles, useTheme } from "@material-ui/styles";
+import { useMediaQuery } from "@material-ui/core";
 
-import { Sidebar, Topbar, Footer } from './components/';
+import { Sidebar, Topbar, Footer } from "./components/";
 
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 56,
-    height: '100%',
-    [theme.breakpoints.up('sm')]: {
+    height: "100%",
+    [theme.breakpoints.up("sm")]: {
       paddingTop: 64
     }
   },
@@ -19,8 +19,8 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 240
   },
   content: {
-    height: '100%',
-    padding: '30px',
+    height: "100%",
+    padding: "30px"
   }
 }));
 
@@ -29,7 +29,7 @@ const Main = props => {
 
   const classes = useStyles();
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
+  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"), {
     defaultMatches: true
   });
 
@@ -57,7 +57,7 @@ const Main = props => {
       <Sidebar
         onClose={handleSidebarClose}
         open={shouldOpenSidebar}
-        variant={isDesktop ? 'persistent' : 'temporary'}
+        variant={isDesktop ? "persistent" : "temporary"}
       />
       <main className={classes.content}>
         {children}

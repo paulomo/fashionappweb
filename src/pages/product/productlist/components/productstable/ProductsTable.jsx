@@ -22,7 +22,7 @@ import { getInitials } from "../../../../../common/helpers";
 import useStyles from "./Styles";
 
 const ProductsTable = props => {
-  const { className, users, ...rest } = props;
+  const { className, users, productData, ...rest } = props;
 
   const classes = useStyles();
 
@@ -80,7 +80,7 @@ const ProductsTable = props => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell padding="checkbox">
+                  {/* <TableCell padding="checkbox">
                     <Checkbox
                       checked={selectedUsers.length === users.length}
                       color="primary"
@@ -90,47 +90,51 @@ const ProductsTable = props => {
                       }
                       onChange={handleSelectAll}
                     />
-                  </TableCell>
+                  </TableCell> */}
+                  <TableCell>Image</TableCell>
                   <TableCell>Name</TableCell>
                   <TableCell>Price</TableCell>
                   <TableCell>Size</TableCell>
                   <TableCell>Stock</TableCell>
+                  <TableCell>Date Listed</TableCell>
                   <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {users.slice(0, rowsPerPage).map(user => (
+                {productData.slice(0, rowsPerPage).map(product => (
                   <TableRow
                     className={classes.tableRow}
                     hover
-                    key={user.id}
-                    selected={selectedUsers.indexOf(user.id) !== -1}
+                    key={product.id}
+                    selected={selectedUsers.indexOf(product.id) !== -1}
                   >
-                    <TableCell padding="checkbox">
+                    {/* <TableCell padding="checkbox">
                       <Checkbox
                         checked={selectedUsers.indexOf(user.id) !== -1}
                         color="primary"
                         onChange={event => handleSelectOne(event, user.id)}
                         value="true"
                       />
-                    </TableCell>
+                    </TableCell> */}
                     <TableCell>
                       <div className={classes.nameContainer}>
-                        <Avatar className={classes.avatar} src={user.avatarUrl}>
-                          {getInitials(user.name)}
+                        <Avatar
+                          className={classes.avatar}
+                          src={product.imageUrl}
+                        >
+                          {/* {getInitials(product.name)} */}
                         </Avatar>
-                        <Typography variant="body1">{user.name}</Typography>
+                        {/* <Typography variant="body1">{user.name}</Typography> */}
                       </div>
                     </TableCell>
-                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{product.name}</TableCell>
+                    <TableCell>{product.price}</TableCell>
+                    <TableCell>{product.size}</TableCell>
+                    <TableCell>{product.stock}</TableCell>
                     <TableCell>
-                      {user.address.city}, {user.address.state},{" "}
-                      {user.address.country}
+                      {moment(product.createdAt).format("DD/MM/YYYY")}
                     </TableCell>
-                    <TableCell>{user.phone}</TableCell>
-                    <TableCell>
-                      {moment(user.createdAt).format("DD/MM/YYYY")}
-                    </TableCell>
+                    <TableCell>{product.status}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

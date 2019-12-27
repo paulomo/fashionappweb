@@ -1,11 +1,16 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
+import {
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+  Avatar,
+} from '@material-ui/core';
+import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import MoneyIcon from '@material-ui/icons/Money';
-
-import useStyles from './style';
+import useStyles from './styles';
 
 const Stock = props => {
   const { className, ...rest } = props;
@@ -29,13 +34,13 @@ const Stock = props => {
               gutterBottom
               variant="body2"
             >
-              BUDGET
+              FAVOURITES
             </Typography>
-            <Typography variant="h3">$24,000</Typography>
+            <Typography variant="h3">75.5%</Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <MoneyIcon className={classes.icon} />
+              <InsertChartIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>
@@ -54,6 +59,7 @@ const Stock = props => {
             Since last month
           </Typography>
         </div>
+ 
       </CardContent>
     </Card>
   );
@@ -64,3 +70,5 @@ Stock.propTypes = {
 };
 
 export default Stock;
+
+
