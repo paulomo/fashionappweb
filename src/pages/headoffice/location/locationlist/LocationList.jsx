@@ -18,10 +18,9 @@ import {
   TablePagination
 } from "@material-ui/core";
 
-import { getInitials } from "../../../../../common/helpers";
 import useStyles from "./styles";
 
-const OrdersTable = props => {
+const LocationList = props => {
   const { className, orderInfo, ...rest } = props;
 
   const classes = useStyles();
@@ -29,7 +28,7 @@ const OrdersTable = props => {
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(0);
-  const [currency] = useState('$');
+  const [currency] = useState("$");
 
   const handleSelectAll = event => {
     const { orderInfo } = props;
@@ -101,12 +100,12 @@ const OrdersTable = props => {
                       onChange={handleSelectAll}
                     />
                   </TableCell> */}
-                  <TableCell>Image</TableCell>
-                  <TableCell>Product Name</TableCell>
-                  <TableCell>Order Date</TableCell>
-                  <TableCell>Quantity</TableCell>
-                  <TableCell>Size</TableCell>
-                  <TableCell>Price</TableCell>
+                  <TableCell>Location Name</TableCell>
+                  <TableCell>Manager</TableCell>
+                  <TableCell>Email</TableCell>
+                  <TableCell>Phone</TableCell>
+                  <TableCell>Staff Size</TableCell>
+                  <TableCell>Start Date</TableCell>
                   <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
@@ -127,18 +126,11 @@ const OrdersTable = props => {
                         value="true"
                       />
                     </TableCell> */}
-                    <TableCell>
-                      <div className={classes.nameContainer}>
-                        <Avatar
-                          className={classes.avatar}
-                          src={order.products.image}
-                        >
-                          D
-                        </Avatar>
-                      </div>
-                    </TableCell>
                     {order.products.map(product => (
-                      <TableCell>{product.name}</TableCell>
+                      <React.Fragment>
+                        <TableCell>{product.name}</TableCell>
+                        <TableCell>{product.name}</TableCell>
+                      </React.Fragment>
                     ))}
                     <TableCell>
                       {moment(order.date).format("DD/MM/YYYY")}
@@ -147,7 +139,10 @@ const OrdersTable = props => {
                       <React.Fragment>
                         <TableCell>{product.quantity}</TableCell>
                         <TableCell>{product.size}</TableCell>
-                        <TableCell>{currency}{product.price}</TableCell>
+                        <TableCell>
+                          {currency}
+                          {product.price}
+                        </TableCell>
                       </React.Fragment>
                     ))}
                     <TableCell>{order.status}</TableCell>
@@ -173,9 +168,9 @@ const OrdersTable = props => {
   );
 };
 
-OrdersTable.propTypes = {
+LocationList.propTypes = {
   className: PropTypes.string,
   users: PropTypes.array.isRequired
 };
 
-export default OrdersTable;
+export default LocationList;

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { SearchInput } from '../../../../../components';
+import { SearchInput } from '../../../../components';
 import useStyles from './styles';
 
-const OrdersToolbar = props => {
+const LocationHead = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -35,8 +35,8 @@ const OrdersToolbar = props => {
   );
 };
 
-OrdersToolbar.propTypes = {
+LocationHead.propTypes = {
   className: PropTypes.string
 };
 
-export default OrdersToolbar;
+export default LocationHead;

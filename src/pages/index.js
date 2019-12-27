@@ -1,7 +1,7 @@
 export { default as Dashboard } from './dashboard';
 export { default as Analytics } from './analytic';
 export { default as Account } from './account';
-export { default as Locations } from './location';
+export { default as Locations } from './headoffice/location';
 export { default as Customers } from './customer';
 export { default as Wallet } from './wallet';
 export { default as ProductList } from './product/productlist';
