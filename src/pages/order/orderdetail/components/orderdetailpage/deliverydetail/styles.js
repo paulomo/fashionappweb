@@ -2,13 +2,17 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      flex: 1,
-      flexDirection: "start",
-      alignContent: 'center',
-      width: 200
+    "& .MuiTextField-root": {
+      margin: theme.spacing(2, 1),
+      // width: flex,
+      alignContent: "center"
     }
+  },
+  mutiple: {
+    '& > *': {
+      margin: theme.spacing(0),
+      width: 430,
+    },
   }
 }));
 
