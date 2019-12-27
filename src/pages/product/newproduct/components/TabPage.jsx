@@ -37,9 +37,9 @@ export default function TabPage({ productData }) {
     setCategory(event.target.value);
   };
 
-  const handleMeasurementOption = (measurementOption) => {
+  const handleMeasurementOption = measurementOption => {
     setMeasurementOption(measurementOption);
-  }
+  };
 
   return (
     <React.Fragment>
