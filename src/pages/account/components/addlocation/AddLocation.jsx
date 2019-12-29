@@ -14,51 +14,70 @@ const AddLocation = () => {
       <CssBaseline />
       <Container maxWidth="md">
         <div className={classes.root}>
-          <Grid container>
+          <Grid container className={classes.mutiple}>
             <TextField
               required
-              id="product-name"
-              label="Product Name"
+              id="first_name"
+              label="First Name"
               variant="outlined"
               fullWidth
             />
-          </Grid>
-          <Grid container>
             <TextField
               required
-              id="description"
-              label="Description"
+              id="last_name"
+              label="Last Name"
               type="text"
-              multiline
               variant="outlined"
               fullWidth
             />
           </Grid>
-
-          <Grid container>
+          <Grid container className={classes.mutiple}>
             <TextField
               required
-              id="material-type"
-              label="Material Type"
+              id="email"
+              label="Email"
               variant="outlined"
               fullWidth
             />
-          </Grid>
-          <Grid container>
             <TextField
               required
-              id="care"
-              label="Care Description"
+              id="phone"
+              label="Phone Number"
               type="text"
-              multiline
               variant="outlined"
               fullWidth
             />
           </Grid>
-          <Grid container>
+          <Grid container className={classes.mutiple}>
             <TextField
-              id="color"
-              label="Color(s)"
+              required
+              id="position"
+              label="Position"
+              variant="outlined"
+              fullWidth
+            />
+            <TextField
+              required
+              id="roles"
+              label="Add roles"
+              type="text"
+              variant="outlined"
+              fullWidth
+            />
+          </Grid>
+          <Grid container className={classes.mutiple}>
+            <TextField
+              required
+              id="city"
+              label="City"
+              variant="outlined"
+              fullWidth
+            />
+            <TextField
+              required
+              id="country"
+              label="Country"
+              type="text"
               variant="outlined"
               fullWidth
             />

@@ -1,47 +1,28 @@
-import React from 'react';
-import clsx from 'clsx';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
-
-import useStyles from './styles';
+import React, { useState } from "react";
+import {  AnalyticsTab } from "./components";
+import useStyles from "./styles";
 
 const Analytics = () => {
   const classes = useStyles();
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const [productData, setProduct] = useState({
+    basicInfo: {},
+    inventory: {},
+    measurement: {},
+    pricing: {},
+    productImage: {},
+    shipping: {}
+  });
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <main className={classes.content}>
-        {/* <div className={classes.appBarSpacer} /> */}
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Chart /> */}
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Deposits /> */}
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {/* <Orders /> */}
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-      </main>
+      <div className={classes.content}>
+        <AnalyticsTab
+          productData={productData}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default Analytics;

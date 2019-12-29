@@ -58,7 +58,7 @@ export default [
 
         id: 1,
         sku: "326274dgdyd",
-        name: "Canvas Print",
+        name: "Vancouver",
         price: "10.24",
         color: {},
         quantity: 17,
@@ -121,7 +121,7 @@ export default [
     products: [
       {
         id: 1,
-        name: "Brown Jacket",
+        name: "Toronto",
         size: 10,
         price: "10.24",
         quantity: 30,
@@ -183,7 +183,7 @@ export default [
     products: [
       {
         id: 1,
-        name: "Dark Denim Jeans",
+        name: "New York",
         size: 8,
         price: "10.24",
         quantity: 12,
