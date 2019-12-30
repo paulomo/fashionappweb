@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {  AnalyticsTab } from "./components";
+import {  LocationInfoTab } from "./components";
 import useStyles from "./styles";
 
-const Analytics = () => {
+const LocationInfo = () => {
   const classes = useStyles();
 
   const [productData, setProduct] = useState({
@@ -17,12 +17,11 @@ const Analytics = () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <AnalyticsTab
-          productData={productData}
+        <LocationInfoTab
         />
       </div>
     </div>
   );
 };
 
-export default Analytics;
+export default LocationInfo;

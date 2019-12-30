@@ -16,6 +16,7 @@ import {
   Dashboard as DashboardPage,
   Account as AccountPage,
   Locations as LocationPage,
+  LocationInfo as LocationInfoPage,
   Customers as CustomersPage,
   ProductList as ProductListPage,
   OrderList as OrderListPage,
@@ -78,6 +79,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/locations"
+      />
+      <RouteWithLayout
+        component={LocationInfoPage}
+        exact
+        layout={MainLayout}
+        path="/location"
       />
       {/* <RouteWithLayout
         component={CustomersPage}

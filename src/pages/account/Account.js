@@ -60,9 +60,9 @@ const Account = () => {
                 onChange={handleChange}
                 indicatorColor="primary"
                 textColor="primary"
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="scrollable auto tabs example"
+                // variant="scrollable"
+                // scrollButtons="auto"
+                // aria-label="scrollable auto tabs example"
                 centered
               >
                 <Tab label="Add Office Staff" {...a11yProps(0)} />
