@@ -10,22 +10,22 @@ export const authEndpoint = {
     signOut: baseUrl + '/auth/tenant/signout'
 }
 
-export const brandEndpoint = {
-    readAllBrandUsers: baseUrl + '/brands',
-    readOneBrandUser: baseUrl + '/brands/:id',
-    updateBrandUser: baseUrl + '/brands/updatebranduser/:id',
-    disableBrandUser: baseUrl + '/brands/disablebranduser/:id',
-    enableBrandUser: baseUrl + '/brands/enablebranduser/:id',
-    deleteBrandUser: baseUrl + '/brands/deletebranduser/:id',
+export const accountEndpoint = {
+    readAllAccount: baseUrl + '/account',
+    readOneAccount: baseUrl + '/account/:id',
+    updateAccount: baseUrl + '/account/updatebranduser/:id',
+    disableAccount: baseUrl + '/account/disablebranduser/:id',
+    enableAccount: baseUrl + '/account/enablebranduser/:id',
+    removeAccount: baseUrl + '/account/removebranduser/:id',
 }
 
 export const productEndpoint = {
     createProduct: baseUrl + '/product',
-    readAllProducts: baseUrl + '/products',
-    readOneProduct: baseUrl + '/products/:id',
-    updateProduct: baseUrl + '/products/updateproduct/:id',
-    publishProduct: baseUrl + '/products/publishproduct/:id',
-    deleteProduct: baseUrl + '/products/deleteproduct/:id',
+    readAllProducts: baseUrl + '/product',
+    readOneProduct: baseUrl + '/product/:id',
+    updateProduct: baseUrl + '/product/updateproduct/:id',
+    publishProduct: baseUrl + '/product/publishproduct/:id',
+    deleteProduct: baseUrl + '/product/deleteproduct/:id',
 }
 
 export const orderEndpoint = {

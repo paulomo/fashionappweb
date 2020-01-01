@@ -14,7 +14,7 @@ export const createProduct = async (product) => {
 export const readAllProducts = async () => {
     const url = productEndpoint.readAllProducts;
     try {
-        const response = await axios.post(url);
+        const response = await axios.get(url);
         return response.data;
     }catch(error) {
         return error.data;
@@ -24,7 +24,7 @@ export const readAllProducts = async () => {
 export const readOneProduct = async (id) => {
     const url = productEndpoint.readOneProduct;
     try {
-        const response = await axios.post(url, id);
+        const response = await axios.get(url, id);
         if(response.data.status === 200) return response.data;
     }catch(error) {
         return error.data;
